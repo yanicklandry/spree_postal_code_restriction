@@ -1,0 +1,16 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= I18n.t('spree.postal_code_restriction.title') %></h1>
+
+<%= form_for(@config, :as => "postal_code_configuration", :url => spree.admin_postal_code_settings_path, :method => :put) do |form| %>
+  <fieldset id="preferences">
+    <%= form.field_container :restricted_postal_codes do %>
+      <%= form.label(:restricted_postal_codes, I18n.t('spree.postal_code_restriction.restricted_postal_codes')+": ") + tag(:br) %>
+      <%= preference_field_tag(:restricted_postal_codes,  @config[:restricted_postal_codes], :type => :text) %>
+    <% end %>
+  </fieldset>
+  <p class="form-buttons">
+    <%= button I18n.t('update') %>
+    <%= I18n.t("or") %> <%= link_to I18n.t("cancel"), spree.admin_postal_code_settings_url %>
+  </p>
+<% end %>

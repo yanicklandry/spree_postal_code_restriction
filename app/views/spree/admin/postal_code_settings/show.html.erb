@@ -1,0 +1,20 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= I18n.t('spree.postal_code_restriction.title') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= I18n.t('setting') %></th>
+      <th><%= I18n.t('value') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= t('spree.postal_code_restriction.restricted_postal_codes') %>:</td>
+      <td><%= @config[:restricted_postal_codes] %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to t("edit"), spree.edit_admin_postal_code_settings_path, class: 'button icon-edit' %></p>

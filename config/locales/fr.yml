@@ -1,12 +1,12 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  setting: Setting
+fr:
+  setting: Paramètre
   spree:
     postal_code_restriction:
-      title: Postal Code Restrictions
-      description: Restricts purchase with certain postal codes
-      restricted_postal_codes: Restricted Postal Codes
-      postal_code: Postal Code
+      title: Restrictions par code postal
+      description: Restreint les achats selon des codes postaux définis
+      restricted_postal_codes: Codes postaux restreints
+      postal_code: Code postal
       
