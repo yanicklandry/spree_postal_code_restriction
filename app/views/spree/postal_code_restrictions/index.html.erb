@@ -1,0 +1,8 @@
+<p><%= I18n.t("spree.postal_code_restriction.please_enter_postal_code") %></p>
+<%= form_tag('') do -%>
+<p>
+  <%= label_tag :postal_code, I18n.t("spree.postal_code_restriction.postal_code") %><br />
+  <%= text_field_tag :postal_code %>
+  <%= submit_tag I18n.t('spree.postal_code_restriction.ok') %>
+</p>
+<% end -%>
