@@ -1,5 +1,10 @@
 class Spree::PostalCodeRestrictionsController < Spree::BaseController
   include Spree::PostalCodeRestrictionsHelper
+  
+  def index
+    @postal_code = cookies['postal_code_restrictions_postal_code']
+  end
+  
   def create
     postal_code = parse_postal_code params['postal_code']
     if(postal_code_formatted? postal_code)

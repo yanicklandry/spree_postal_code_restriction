@@ -9,6 +9,7 @@ fr:
       description: Restreint les achats selon des codes postaux définis
       restricted_postal_codes: Codes postaux restreints
       postal_code: Code postal
+      change_postal_code: Changer le code postal
       not_valid: "Le code postal n'est pas valide"
       not_canadian: "Mon adresse n'est pas au Canada"
       please_enter_postal_code: "Pour continuer, veuillez entrer votre code postal."

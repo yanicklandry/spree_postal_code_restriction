@@ -9,6 +9,7 @@ en:
       description: Restricts purchase with certain postal codes
       restricted_postal_codes: Restricted Postal Codes
       postal_code: Postal Code
+      change_postal_code: Change Postal Code
       not_valid: "The postal code is not valid"
       not_canadian: "My address is not in Canada"
       please_enter_postal_code: "To continue, please enter your postal code."
