@@ -38,7 +38,7 @@ module Spree::PostalCodeRestrictionsHelper
   end
 
   def parse_postal_code postal_code
-    postal_code.delete(' ').upcase
+    postal_code ? postal_code.delete(' ').upcase : nil
   end
 
   def postal_code_formatted? postal_code
