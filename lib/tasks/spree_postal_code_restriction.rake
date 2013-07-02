@@ -2,7 +2,7 @@ namespace :spree_postal_code_restriction do
   
   task :set_postal_code_if_none => :environment do
     desc "set the postal code for users who have none"
-    include Spree::PostalCodeRestrictionsHelper
+    include Spree::BaseHelper
     
     r = Spree::Role.find_by_name('retailer')
     Spree::User.where(:postal_code => nil).each do |u|

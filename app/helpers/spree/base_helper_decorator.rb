@@ -1,4 +1,4 @@
-module Spree::PostalCodeRestrictionsHelper
+Spree::BaseHelper.class_eval do
   
   include SpreePerlimCustomHelper if defined? SpreePerlimCustomHelper
   
@@ -12,15 +12,15 @@ module Spree::PostalCodeRestrictionsHelper
       postal_code_to_validate = nil
       if(spree_current_user)
         postal_code_to_validate = spree_current_user.postal_code
-        if postal_code_to_validate.nil?
+        if postal_code_to_validate.nil? or postal_code_to_validate.empty?
           flash[:notice] = I18n.t("spree.postal_code_restriction.please_enter_postal_code")
           redirect_to "/#{locale_string}/account/edit"
           return nil
         end
       else
         postal_code_to_validate = cookies['postal_code_restrictions_postal_code']
-        if postal_code_to_validate.nil?
-          redirect_to "/postal_code_restrictions/"
+        if postal_code_to_validate.nil? or postal_code_to_validate.empty?
+          redirect_to "/#{locale_string}/postal_code_restrictions/"
           return nil
         end
       end

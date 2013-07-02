@@ -1,6 +1,6 @@
 Spree::OrdersController.class_eval do
-  before_filter :validate_access_to_cart
-  include Spree::PostalCodeRestrictionsHelper
+  before_filter :validate_access_to_cart, :only => [:edit]
+  include Spree::BaseHelper
   
   def validate_access_to_cart
     if validate_postal_code === false

@@ -1,7 +1,7 @@
 Spree::User.class_eval do
   attr_accessible :postal_code, :is_not_canadian
   validate :postal_code_valid
-  include Spree::PostalCodeRestrictionsHelper
+  include Spree::BaseHelper
   def postal_code_valid
     if(self.is_not_canadian)
       self.postal_code = ""

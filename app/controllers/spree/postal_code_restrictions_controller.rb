@@ -1,5 +1,5 @@
 class Spree::PostalCodeRestrictionsController < Spree::BaseController
-  include Spree::PostalCodeRestrictionsHelper
+  include Spree::BaseHelper
   
   def index
     @postal_code = cookies['postal_code_restrictions_postal_code']
