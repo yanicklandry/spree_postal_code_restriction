@@ -4,7 +4,7 @@ Deface::Override.new(
 :insert_top => '#cart-bar',
 :text => "
 <li>
-<% if cookies['postal_code_restrictions_postal_code'] %>
+<% if cookies['postal_code_restrictions_postal_code'] and !spree_current_user %>
   <%= link_to I18n.t('spree.postal_code_restriction.change_postal_code'), '/postal_code_restrictions/' %>
 <% end %>
 </li>
