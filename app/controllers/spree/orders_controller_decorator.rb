@@ -4,7 +4,7 @@ Spree::OrdersController.class_eval do
   
   def validate_access_to_cart
     if validate_postal_code === false
-      flash[:notice] = I18n.t("spree.postal_code_restriction.shop_online")
+      flash[:retailer] = I18n.t("spree.postal_code_restriction.shop_online")
       redirect_to "/#{locale_string}/detaillants"
       return
     end
