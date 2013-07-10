@@ -14,5 +14,5 @@ en:
       not_canadian: "My address is not in Canada"
       please_enter_postal_code: "To continue, please enter your postal code."
       ok: OK
-      shop_online: "You want to shop online? Look for retailers with a shopping cart!"
+      shop_online: "You want to shop online? <br/>Look for retailers with a shopping cart!"
       
