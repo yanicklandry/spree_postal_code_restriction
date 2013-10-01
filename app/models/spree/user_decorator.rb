@@ -3,7 +3,7 @@ Spree::User.class_eval do
   validate :postal_code_valid
   include Spree::BaseHelper
   def postal_code_valid
-    if(self.is_not_canadian)
+    if(self.is_not_canadian or self.postal_code.nil?)
       self.postal_code = ""
     else
       self.postal_code = parse_postal_code self.postal_code
