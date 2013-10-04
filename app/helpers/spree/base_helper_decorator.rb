@@ -25,14 +25,23 @@ Spree::BaseHelper.class_eval do
         end
       end
       
+      postal_code_not_in_restricted? postal_code_to_validate
+      
+    end
+  end
+  
+  def postal_code_not_in_restricted? postal_code_to_validate
+    restricted_postal_codes = Spree::PostalCodeConfiguration.new.restricted_postal_codes
+    if (defined?(retailer?) and retailer?(spree_current_user)) or restricted_postal_codes.nil?
+      true
+    else
       postal_code_to_validate = parse_postal_code postal_code_to_validate
       restricted_postal_codes.split("\r\n").all? do |restricted|
         !Regexp.new(restricted).match(postal_code_to_validate)
       end
-      
     end
   end
-
+  
   def locale_string
     I18n.locale.to_s.split('-')[0].downcase
   end
